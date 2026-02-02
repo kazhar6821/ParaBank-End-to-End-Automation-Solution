@@ -1,58 +1,23 @@
-# ParaBank End-to-End Automation Framework
+# ParaBank Automation
 
-Automated end-to-end testing and reporting framework for the **ParaBank** demo banking application using **Python, Selenium, Pandas, and OpenPyXL**.
+Simple end-to-end automation for the ParaBank demo site.
 
-This project simulates realistic banking workflows at scale:
-- User registration
-- Account creation
-- Loan requests
-- Data validation
-- Structured Excel reporting with conditional formatting
+## What it does
+- Registers users from a file
+- Opens bank accounts
+- Requests a $10,000 loan with 20% down payment
+- Converts results to EUR
+- Generates a formatted Excel report
+- Logs out and closes the browser safely
 
----
+## Input
+`ParaBank_users.csv` – list of customer profiles.
 
-## Why This Project Exists
+## Output
+- `Parabank_Automation_Report.xlsx` (business-ready report)
+- `screenshots/` (only if errors occur)
 
-Manual testing of banking flows is slow, error-prone, and impossible to scale.  
-This framework demonstrates how to:
-
-- Drive **data-driven UI automation**
-- Validate user data before execution
-- Handle failures gracefully
-- Produce **auditable, business-ready reports**
-- Keep automation code modular and readable
-
-This is not a script — it’s a **mini automation framework**.
-
----
-
-## Features
-
-- **CSV-driven execution** (multiple users, zero code changes)
-- **Strong data validation** before UI interaction
-- **Selenium WebDriver automation**
-- **Loan logic simulation** (currency conversion, down payment calculation)
-- **Automatic screenshot capture on failure**
-- **Excel report generation with styling**
-  - Conditional formatting
-  - Currency formatting
-  - Auto-sizing columns
-  - Filters and frozen headers
-- **Timestamped execution records**
-- **Clean logging**
-
----
-
-## Tech Stack
-
-- Python 3.12.7
-- Selenium
-- Pandas
-- OpenPyXL
-- webdriver-manager
-- Chrome WebDriver
-
----
-
-## Project Structure
-
+## How to run
+```bash
+pip install selenium pandas openpyxl python-dateutil webdriver-manager
+python parabank_automation.py
